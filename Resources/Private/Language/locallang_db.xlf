@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:news_extended/Resources/Private/Language/locallang_db.xlf" date="2022-02-02T22:29:12Z" product-name="news_extended">
+		<header/>
+		<body>
+			<trans-unit id="tx_newsextended_domain_model_news" resname="tx_newsextended_domain_model_news">
+				<source>News</source>
+			</trans-unit>
+			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_no_detail" resname="tx_newsextended_domain_model_news.tx_ps14_no_detail">
+				<source>Tx Ps14 No Detail</source>
+			</trans-unit>
+			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_location" resname="tx_newsextended_domain_model_news.tx_ps14_location">
+				<source>Tx Ps14 Location</source>
+			</trans-unit>
+			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_event_startdate" resname="tx_newsextended_domain_model_news.tx_ps14_event_startdate">
+				<source>Tx Ps14 Event Startdate</source>
+			</trans-unit>
+			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_event_enddate" resname="tx_newsextended_domain_model_news.tx_ps14_event_enddate">
+				<source>Tx Ps14 Event Enddate</source>
+			</trans-unit>
+			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_event_starttime" resname="tx_newsextended_domain_model_news.tx_ps14_event_starttime">
+				<source>Tx Ps14 Event Starttime</source>
+			</trans-unit>
+			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_event_endtime" resname="tx_newsextended_domain_model_news.tx_ps14_event_endtime">
+				<source>Tx Ps14 Event Endtime</source>
+			</trans-unit>
+			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_layout" resname="tx_newsextended_domain_model_news.tx_ps14_layout">
+				<source>Tx Ps14 Layout</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
