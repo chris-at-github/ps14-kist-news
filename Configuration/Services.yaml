@@ -1,0 +1,15 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Ps14\NewsExtended\:
+    resource: '../Classes/*'
+
+  Ps14\NewsExtended\EventListener\NewsDetailListener:
+    tags:
+      - name: event.listener
+        identifier: 'news-extended-detail'
+        method: 'detailActionEvent'
+        event: GeorgRinger\News\Event\NewsDetailActionEvent
