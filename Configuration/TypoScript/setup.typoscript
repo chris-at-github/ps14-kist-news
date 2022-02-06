@@ -2,6 +2,4 @@
 
 	// Einbindung Breadcrumb -> angepasste Version in Sub-Extension einbinden (falls noetig)
 	page.10.dataProcessing.31 = Ps14\NewsExtended\DataProcessing\BreadcrumbProcessor
-	page.10.dataProcessing.31 {
-	}
 [END]

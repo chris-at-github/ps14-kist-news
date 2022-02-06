@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Ps14\NewsExtended\EventListener;
 
 use GeorgRinger\News\Event\NewsDetailActionEvent;
+use Ps14\NewsExtended\Domain\Model\News;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3\CMS\Core\MetaTag\MetaTagManagerRegistry;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -20,14 +21,12 @@ class NewsDetailListener {
 	 */
 	public function detailActionEvent(NewsDetailActionEvent $event): void {
 
-		$metaTagManager = GeneralUtility::makeInstance(MetaTagManagerRegistry::class)->getManagerForProperty('robots');
-		//$metaTagManager->addProperty('robots', 'index, follow');
+		/** @var News $news */
+		$news = $event->getAssignedValues()['newsItem'];
 
-		//DebuggerUtility::var_dump($event);
-//		$values = $event->getAssignedValues();
-//
-//		// Do some stuff
-//
-//		$event->setAssignedValues($values);
+		if($news->isNoDetail() === false) {
+			$metaTagManager = GeneralUtility::makeInstance(MetaTagManagerRegistry::class)->getManagerForProperty('robots');
+			$metaTagManager->addProperty('robots', 'index, follow');
+		}
 	}
 }

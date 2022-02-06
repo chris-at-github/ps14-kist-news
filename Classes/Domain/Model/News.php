@@ -133,4 +133,18 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	public function setEventEndtime(?\DateTime $eventEndtime): void {
 		$this->eventEndtime = $eventEndtime;
 	}
+
+	/**
+	 * @return bool
+	 */
+	public function isNoDetail(): bool {
+		return $this->noDetail;
+	}
+
+	/**
+	 * @param bool $noDetail
+	 */
+	public function setNoDetail(bool $noDetail): void {
+		$this->noDetail = $noDetail;
+	}
 }
