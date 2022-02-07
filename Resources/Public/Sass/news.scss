@@ -1,0 +1,93 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Pre-Define Variables
+$iconfont-create-font-face: false !default;
+$iconfont-create-icon-class: false !default;
+
+$stylesheet-context: 'screen' !default;
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Bootstrap & XNA
+@import '../../../../xna/Resources/Public/Sass/functions';
+@import '../../../../xna/Resources/Public/Sass/variables';
+@import '../../../../xna/Resources/Public/Sass/mixins';
+@import '../../../../xna/Resources/Public/Sass/definitions';
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Variablen
+$ce-news--use-css: true !default;
+$ce-news--layout-detail: true !default;
+
+// ---------------------------------------------------------------------------------------------------------------------
+// CSS
+@include stylesheet-context($stylesheet-context-screen) {
+	@if($ce-news--use-css) {
+
+		@if($ce-news--layout-detail) {
+			.article {
+				margin-bottom: rem(55px);
+			}
+
+			.article-header__date {
+				display: block;
+				margin: rem(10px 0 0 0);
+				font-size: $font-size-base;
+				color: $theme-color-secondary;
+			}
+
+			.article-image {
+				img {
+					@extend %image-responsive;
+				}
+			}
+		}
+
+		// -------------------------------------------------------------------------------------------------------------------
+		// >= 768px
+		@include media-breakpoint-up(md) {
+			.article {
+				margin-bottom: rem(75px);
+			}
+
+			.article__media {
+				float: right;
+				margin: rem(0 0 20px 30px);
+			}
+
+			.article__bodytext {
+				padding-right: percentage(2 / 12);
+			}
+		}
+
+		// -------------------------------------------------------------------------------------------------------------------
+		// >= 992px
+		@include media-breakpoint-up(lg) {
+		}
+
+		// -------------------------------------------------------------------------------------------------------------------
+		// >= 1200px
+		@include media-breakpoint-up(xl) {
+			.article__media {
+				float: right;
+				margin: rem(0 0 20px 45px);
+			}
+
+			.article__bodytext {
+				padding-right: rem(190px)
+			}
+		}
+	}
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Print
+@include stylesheet-context($stylesheet-context-print) {
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// PDF
+@include stylesheet-context($stylesheet-context-pdf) {
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// XNA Override
+@import '../../../../xna/Resources/Public/Sass/xna/modules/news';
