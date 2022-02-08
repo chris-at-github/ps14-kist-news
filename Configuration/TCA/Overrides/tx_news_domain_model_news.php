@@ -1,6 +1,12 @@
 <?php
 defined('TYPO3_MODE') || die();
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Neue Paletten
+//$GLOBALS['TCA']['tx_news_domain_model_news']['palettes']['layout'] = [
+//	'showitem' => 'layout,'
+//];
+
 //if (!isset($GLOBALS['TCA']['tx_news_domain_model_news']['ctrl']['type'])) {
 //    // no type field defined, so we define it here. This will only happen the first time the extension is installed!!
 //    $GLOBALS['TCA']['tx_news_domain_model_news']['ctrl']['type'] = 'tx_extbase_type';
@@ -151,3 +157,42 @@ $GLOBALS['TCA']['tx_news_domain_model_news']['types']['3'] = [
 //    'LLL:EXT:news_extended/Resources/Private/Language/locallang_tca.xlf:tx_news_domain_model_news.tx_extbase_type.Tx_NewsExtended_News',
 //    'Tx_NewsExtended_News'
 //];
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Konfigurationsanpassungen Global
+$GLOBALS['TCA']['tx_news_domain_model_news']['columns']['fal_media']['config']['maxitems'] = 1;
+$GLOBALS['TCA']['tx_news_domain_model_news']['columns']['fal_media']['config']['overrideChildTca']['columns']['showinpreview']['config']['default'] = 1;
+$GLOBALS['TCA']['tx_news_domain_model_news']['columns']['fal_media']['config']['overrideChildTca']['columns']['crop']['config']['cropVariants'] = [
+	'default' => [
+		'title' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_crop_variant.default',
+		'allowedAspectRatios' => [
+			'4_3' => [
+				'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.4_3',
+				'value' => 4 / 3
+			],
+			'16_9' => [
+				'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.16_9',
+				'value' => 16 / 9
+			],
+			'NaN' => [
+				'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.free',
+				'value' => 0.0
+			],
+		],
+		'selectedRatio' => '4_3',
+	],
+	'thumbnail' => [
+		'title' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_crop_variant.thumbnail',
+		'allowedAspectRatios' => [
+			'16_9' => [
+				'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.16_9',
+				'value' => 16 / 9
+			],
+			'NaN' => [
+				'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.free',
+				'value' => 0.0
+			],
+		],
+		'selectedRatio' => '16_9',
+	],
+];

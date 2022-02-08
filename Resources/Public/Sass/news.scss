@@ -37,6 +37,7 @@ $ce-news--layout-detail: true !default;
 			.article-image {
 				img {
 					@extend %image-responsive;
+					width: 100%;
 				}
 			}
 		}
@@ -49,6 +50,7 @@ $ce-news--layout-detail: true !default;
 			}
 
 			.article__media {
+				max-width: 50%;
 				float: right;
 				margin: rem(0 0 20px 30px);
 			}
