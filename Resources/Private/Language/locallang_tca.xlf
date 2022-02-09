@@ -3,29 +3,54 @@
 	<file source-language="en" datatype="plaintext" original="EXT:news_extended/Resources/Private/Language/locallang_db.xlf" date="2022-02-02T22:29:12Z" product-name="news_extended">
 		<header/>
 		<body>
+			<trans-unit id="tx_news_domain_model_news.palette.event_date">
+				<source>Dates</source>
+			</trans-unit>
+			<trans-unit id="tx_news_domain_model_news.palette.appearance">
+				<source>Appearance</source>
+			</trans-unit>
+			<trans-unit id="tx_news_domain_model_news.palette.location">
+				<source>Location</source>
+			</trans-unit>
+
 			<trans-unit id="tx_newsextended_domain_model_news">
 				<source>News</source>
 			</trans-unit>
 			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_no_detail">
-				<source>Tx Ps14 No Detail</source>
+				<source>No detail page</source>
 			</trans-unit>
 			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_location">
-				<source>Tx Ps14 Location</source>
+				<source>Location</source>
 			</trans-unit>
 			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_event_startdate">
-				<source>Tx Ps14 Event Startdate</source>
+				<source>Event startdate</source>
 			</trans-unit>
 			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_event_enddate">
-				<source>Tx Ps14 Event Enddate</source>
+				<source>Event enddate</source>
 			</trans-unit>
 			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_event_starttime">
-				<source>Tx Ps14 Event Starttime</source>
+				<source>Event starttime</source>
 			</trans-unit>
 			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_event_endtime">
-				<source>Tx Ps14 Event Endtime</source>
+				<source>Event endtime</source>
 			</trans-unit>
 			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_layout">
-				<source>Tx Ps14 Layout</source>
+				<source>Layout (Card)</source>
+			</trans-unit>
+			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_layout.0">
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_layout.1">
+				<source>Transparent Background</source>
+			</trans-unit>
+			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_layout.2">
+				<source>Blue Background</source>
+			</trans-unit>
+			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_layout.3">
+				<source>Logo</source>
+			</trans-unit>
+			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_event_link">
+				<source>Link</source>
 			</trans-unit>
 		</body>
 	</file>
