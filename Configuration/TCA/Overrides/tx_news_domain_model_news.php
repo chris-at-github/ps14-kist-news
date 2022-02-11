@@ -118,6 +118,8 @@ $tmpNewsColumns = [
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tx_news_domain_model_news', $tmpNewsColumns);
 // \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tx_news_domain_model_news', 'tx_ps14_no_detail, tx_ps14_event_startdate, tx_ps14_event_enddate, tx_ps14_event_starttime, tx_ps14_event_endtime, tx_ps14_layout,', '', 'after:notes');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tx_news_domain_model_news', 'tx_ps14_layout,', '0, 1, 2', 'after:bodytext');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tx_news_domain_model_news', 'tx_ps14_no_detail,', '0, 1, 2', 'after:hidden');
 
 $GLOBALS['TCA']['tx_news_domain_model_news']['columns']['type']['config']['items']['3'] =
 	['Event', 3] ;

@@ -49,6 +49,10 @@ $ce-news--layout-detail: true !default;
 				margin-bottom: rem(75px);
 			}
 
+			.article__body {
+				@include clearfix();
+			}
+
 			.article__media {
 				max-width: 50%;
 				float: right;
