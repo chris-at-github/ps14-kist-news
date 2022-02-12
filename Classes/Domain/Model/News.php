@@ -147,4 +147,11 @@ class News extends \GeorgRinger\News\Domain\Model\News {
 	public function setNoDetail(bool $noDetail): void {
 		$this->noDetail = $noDetail;
 	}
+
+	/**
+	 * @return bool
+	 */
+	public function isTypeEvent() {
+		return false;
+	}
 }

@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="EXT:news_extended/Resources/Private/Language/locallang.xlf" date="2022-02-02T22:29:12Z" product-name="news_extended">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-11-27T06:25:54Z" product-name="news_extended" target-language="de">
 		<header/>
 		<body>
 			<trans-unit id="tx_newsextended.action.readmore">
-				<source>More information</source>
+				<target>Weitere Informationen</target>
 			</trans-unit>
 
 			<trans-unit id="tx_newsextended.date.dayRange">
-				<source>:startmonth :startday to :endday, :startyear</source>
+				<target>:startday. - :endday. :startmonth :startyear</target>
 			</trans-unit>
 			<trans-unit id="tx_newsextended.date.dateRange">
-				<source>:startdate to|:enddate</source>
+				<target>:startdate -|:enddate</target>
 			</trans-unit>
 			<trans-unit id="tx_newsextended.date.timeRange">
-				<source>:starttime to :endtime|:startdate</source>
+				<target>:starttime - :endtime Uhr|:startdate</target>
 			</trans-unit>
 			<trans-unit id="tx_newsextended.date.time">
-				<source>:starttime|:startdate</source>
+				<target>:starttime Uhr|:startdate</target>
 			</trans-unit>
 			<trans-unit id="tx_newsextended.date.date">
-				<source>:startdate</source>
+				<target>:startdate</target>
 			</trans-unit>
 		</body>
 	</file>
