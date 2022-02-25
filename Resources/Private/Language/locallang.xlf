@@ -14,10 +14,10 @@
 				<source>:startdate to|:enddate</source>
 			</trans-unit>
 			<trans-unit id="tx_newsextended.date.timeRange">
-				<source>:starttime to :endtime|:startdate</source>
+				<source>:startdate,|:starttime to :endtime</source>
 			</trans-unit>
 			<trans-unit id="tx_newsextended.date.time">
-				<source>:starttime|:startdate</source>
+				<source>:startdate,|:starttime</source>
 			</trans-unit>
 			<trans-unit id="tx_newsextended.date.date">
 				<source>:startdate</source>

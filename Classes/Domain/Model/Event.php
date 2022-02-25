@@ -71,13 +71,13 @@ class Event extends News {
 			} else {
 
 				if($this->getEventStarttime() !== null) {
-					$starttimeTimestamp = (int) $this->getEventStarttime()->format('U');
-					$components[':starttime'] = strftime(LocalizationUtility::translate('LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo_date.format.time', 'Xo'), $starttimeTimestamp);
+					$starttime = new \DateTime('@' . (int) $this->getEventStarttime()->format('U'), new \DateTimeZone('UTC'));
+					$components[':starttime'] = $starttime->format(LocalizationUtility::translate('LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo_date.format.time', 'Xo'));
 
 					// 14:00 - 16:00 Uhr 24. November 2022
 					if($this->getEventEndtime() !== null) {
-						$endtimeTimestamp = (int) $this->getEventEndtime()->format('U');
-						$components[':endtime'] = strftime(LocalizationUtility::translate('LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo_date.format.time', 'Xo'), $endtimeTimestamp);
+						$endtime = new \DateTime('@' . (int) $this->getEventEndtime()->format('U'), new \DateTimeZone('UTC'));
+						$components[':endtime'] = $endtime->format(LocalizationUtility::translate('LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo_date.format.time', 'Xo'));
 						$format = LocalizationUtility::translate('LLL:EXT:news_extended/Resources/Private/Language/locallang.xlf:tx_newsextended.date.timeRange', 'NewsExtended');
 
 						// 16:00 Uhr 24. November 2022
