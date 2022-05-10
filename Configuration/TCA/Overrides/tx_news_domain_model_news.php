@@ -110,6 +110,7 @@ $tmpNewsColumns = [
 				['LLL:EXT:news_extended/Resources/Private/Language/locallang_tca.xlf:tx_newsextended_domain_model_news.tx_ps14_layout.1', 1],
 				['LLL:EXT:news_extended/Resources/Private/Language/locallang_tca.xlf:tx_newsextended_domain_model_news.tx_ps14_layout.2', 2],
 				['LLL:EXT:news_extended/Resources/Private/Language/locallang_tca.xlf:tx_newsextended_domain_model_news.tx_ps14_layout.3', 3],
+				['LLL:EXT:news_extended/Resources/Private/Language/locallang_tca.xlf:tx_newsextended_domain_model_news.tx_ps14_layout.4', 4],
 			],
 		],
 	],

@@ -47,7 +47,10 @@
 				<source>Blue Background</source>
 			</trans-unit>
 			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_layout.3">
-				<source>Logo</source>
+				<source>Event (Grey Background</source>
+			</trans-unit>
+			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_layout.4">
+				<source>Event (Blue Background</source>
 			</trans-unit>
 			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_event_link">
 				<source>Link</source>
