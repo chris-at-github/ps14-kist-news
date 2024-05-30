@@ -3,23 +3,23 @@
 	<file source-language="en" datatype="plaintext" original="EXT:ps14_kist_news/Resources/Private/Language/locallang.xlf" date="2022-02-02T22:29:12Z" product-name="ps14_kist_news">
 		<header/>
 		<body>
-			<trans-unit id="tx_newsextended.action.readmore">
+			<trans-unit id="action.readmore">
 				<source>More information</source>
 			</trans-unit>
 
-			<trans-unit id="tx_newsextended.date.dayRange">
+			<trans-unit id="date.dayRange">
 				<source>:startmonth :startday to :endday, :startyear</source>
 			</trans-unit>
-			<trans-unit id="tx_newsextended.date.dateRange">
+			<trans-unit id="date.dateRange">
 				<source>:startdate to|:enddate</source>
 			</trans-unit>
-			<trans-unit id="tx_newsextended.date.timeRange">
+			<trans-unit id="date.timeRange">
 				<source>:startdate,|:starttime to :endtime</source>
 			</trans-unit>
-			<trans-unit id="tx_newsextended.date.time">
+			<trans-unit id="date.time">
 				<source>:startdate,|:starttime</source>
 			</trans-unit>
-			<trans-unit id="tx_newsextended.date.date">
+			<trans-unit id="date.date">
 				<source>:startdate</source>
 			</trans-unit>
 		</body>
