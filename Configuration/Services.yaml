@@ -4,10 +4,10 @@ services:
     autoconfigure: true
     public: false
 
-  Ps14\NewsExtended\:
+  Ps14\KistNews\:
     resource: '../Classes/*'
 
-  Ps14\NewsExtended\EventListener\NewsDetailListener:
+  Ps14\KistNews\EventListener\NewsDetailListener:
     tags:
       - name: event.listener
         identifier: 'news-extended-detail'

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Ps14\NewsExtended\Domain\Model;
+namespace Ps14\KistNews\Domain\Model;
 
 
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
@@ -44,7 +44,7 @@ class Event extends News {
 
 		if($this->getEventStartdate() !== null) {
 			$startdateTimestamp = (int) $this->getEventStartdate()->format('U');
-			$format = LocalizationUtility::translate('LLL:EXT:news_extended/Resources/Private/Language/locallang.xlf:tx_newsextended.date.date', 'NewsExtended');
+			$format = LocalizationUtility::translate('LLL:EXT:ps14_kist_news/Resources/Private/Language/locallang.xlf:tx_newsextended.date.date', 'KistNews');
 
 			$components[':startday'] = $this->getEventStartdate()->format('d');
 			$components[':startmonth'] = strftime('%B', $startdateTimestamp);
@@ -61,12 +61,12 @@ class Event extends News {
 				// 22. - 24. Oktober 2022
 				// February 12 - 14, 2022
 				if($this->getEventStartdate()->format('mY') === $this->getEventEnddate()->format('mY')) {
-					$format = LocalizationUtility::translate('LLL:EXT:news_extended/Resources/Private/Language/locallang.xlf:tx_newsextended.date.dayRange', 'NewsExtended');
+					$format = LocalizationUtility::translate('LLL:EXT:ps14_kist_news/Resources/Private/Language/locallang.xlf:tx_newsextended.date.dayRange', 'KistNews');
 
 				// 22. Oktober - 24. November 2022
 				// February 12, 2022 - March 14, 2022
 				} else {
-					$format = LocalizationUtility::translate('LLL:EXT:news_extended/Resources/Private/Language/locallang.xlf:tx_newsextended.date.dateRange', 'NewsExtended');
+					$format = LocalizationUtility::translate('LLL:EXT:ps14_kist_news/Resources/Private/Language/locallang.xlf:tx_newsextended.date.dateRange', 'KistNews');
 				}
 			} else {
 
@@ -78,11 +78,11 @@ class Event extends News {
 					if($this->getEventEndtime() !== null) {
 						$endtime = new \DateTime('@' . (int) $this->getEventEndtime()->format('U'), new \DateTimeZone('UTC'));
 						$components[':endtime'] = $endtime->format(LocalizationUtility::translate('LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo_date.format.time', 'Xo'));
-						$format = LocalizationUtility::translate('LLL:EXT:news_extended/Resources/Private/Language/locallang.xlf:tx_newsextended.date.timeRange', 'NewsExtended');
+						$format = LocalizationUtility::translate('LLL:EXT:ps14_kist_news/Resources/Private/Language/locallang.xlf:tx_newsextended.date.timeRange', 'KistNews');
 
 						// 16:00 Uhr 24. November 2022
 					} else {
-						$format = LocalizationUtility::translate('LLL:EXT:news_extended/Resources/Private/Language/locallang.xlf:tx_newsextended.date.time', 'NewsExtended');
+						$format = LocalizationUtility::translate('LLL:EXT:ps14_kist_news/Resources/Private/Language/locallang.xlf:tx_newsextended.date.time', 'KistNews');
 					}
 				}
 			}

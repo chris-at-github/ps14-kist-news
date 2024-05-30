@@ -1,6 +1,6 @@
 <?php
 
-namespace Ps14\NewsExtended\DataProcessing;
+namespace Ps14\KistNews\DataProcessing;
 
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;

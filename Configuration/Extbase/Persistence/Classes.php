@@ -5,33 +5,33 @@ declare(strict_types=1);
 return [
 	\GeorgRinger\News\Domain\Model\News::class => [
 		'subclasses' => [
-			3 => \Ps14\NewsExtended\Domain\Model\Event::class,
+			3 => \Ps14\KistNews\Domain\Model\Event::class,
 		],
 		'properties' => [
 			'noDetail' => [
-				'fieldName' => 'tx_ps14_no_detail'
+				'fieldName' => 'tx_kist_news_no_detail'
 			],
 			'location' => [
-				'fieldName' => 'tx_ps14_location'
+				'fieldName' => 'tx_kist_news_location'
 			],
 			'eventStartdate' => [
-				'fieldName' => 'tx_ps14_event_startdate'
+				'fieldName' => 'tx_kist_news_event_startdate'
 			],
 			'eventEnddate' => [
-				'fieldName' => 'tx_ps14_event_enddate'
+				'fieldName' => 'tx_kist_news_event_enddate'
 			],
 			'eventStarttime' => [
-				'fieldName' => 'tx_ps14_event_starttime'
+				'fieldName' => 'tx_kist_news_event_starttime'
 			],
 			'eventEndtime' => [
-				'fieldName' => 'tx_ps14_event_endtime'
+				'fieldName' => 'tx_kist_news_event_endtime'
 			],
 			'layout' => [
-				'fieldName' => 'tx_ps14_layout'
+				'fieldName' => 'tx_kist_news_layout'
 			],
 		]
 	],
-	\Ps14\NewsExtended\Domain\Model\Event::class => [
+	\Ps14\KistNews\Domain\Model\Event::class => [
 		'tableName' => 'tx_news_domain_model_news',
 		'recordType' => 3,
 	]

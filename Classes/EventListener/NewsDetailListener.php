@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Ps14\NewsExtended\EventListener;
+namespace Ps14\KistNews\EventListener;
 
 use GeorgRinger\News\Event\NewsDetailActionEvent;
-use Ps14\NewsExtended\Domain\Model\News;
+use Ps14\KistNews\Domain\Model\News;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3\CMS\Core\MetaTag\MetaTagManagerRegistry;
 use TYPO3\CMS\Core\Utility\GeneralUtility;

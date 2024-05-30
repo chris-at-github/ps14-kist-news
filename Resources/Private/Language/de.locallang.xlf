@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2018-11-27T06:25:54Z" product-name="news_extended" target-language="de">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-11-27T06:25:54Z" product-name="ps14_kist_news" target-language="de">
 		<header/>
 		<body>
 			<trans-unit id="tx_newsextended.action.readmore">

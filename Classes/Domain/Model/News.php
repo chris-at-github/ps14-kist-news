@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Ps14\NewsExtended\Domain\Model;
+namespace Ps14\KistNews\Domain\Model;
 
 
 /**

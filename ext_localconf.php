@@ -1,7 +1,10 @@
 <?php
 
-defined('TYPO3_MODE') or die();
+if(defined('TYPO3') === false) {
+	die('Access denied.');
+}
 
 call_user_func(function()	{
-	$GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['classes']['Domain/Model/News']['news_extended'] = 'news_extended';
+	// @see: https://docs.typo3.org/p/georgringer/news/11.4/en-us/Tutorials/ExtendNews/ProxyClassGenerator/Index.html#2-register-the-class
+	$GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['classes']['Domain/Model/News']['ps14_kist_news'] = 'kist_news';
 });

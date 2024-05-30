@@ -1,58 +1,55 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="EXT:news_extended/Resources/Private/Language/locallang_db.xlf" date="2022-02-02T22:29:12Z" product-name="news_extended">
+	<file source-language="en" datatype="plaintext" original="EXT:ps14_kist_news/Resources/Private/Language/locallang_db.xlf" date="2024-05-30T12:00:00Z" product-name="ps14_kist_news">
 		<header/>
 		<body>
-			<trans-unit id="tx_news_domain_model_news.palette.event_date">
+			<trans-unit id="news.palette.event-date">
 				<source>Dates</source>
 			</trans-unit>
-			<trans-unit id="tx_news_domain_model_news.palette.appearance">
+			<trans-unit id="news.palette.appearance">
 				<source>Appearance</source>
 			</trans-unit>
-			<trans-unit id="tx_news_domain_model_news.palette.location">
+			<trans-unit id="news.palette.location">
 				<source>Location</source>
 			</trans-unit>
-
-			<trans-unit id="tx_newsextended_domain_model_news">
-				<source>News</source>
-			</trans-unit>
-			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_no_detail">
+			
+			<trans-unit id="news.no_detail">
 				<source>No detail page</source>
 			</trans-unit>
-			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_location">
+			<trans-unit id="news.location">
 				<source>Location</source>
 			</trans-unit>
-			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_event_startdate">
+			<trans-unit id="news.event-startdate">
 				<source>Event startdate</source>
 			</trans-unit>
-			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_event_enddate">
+			<trans-unit id="news.event-enddate">
 				<source>Event enddate</source>
 			</trans-unit>
-			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_event_starttime">
+			<trans-unit id="news.event-starttime">
 				<source>Event starttime</source>
 			</trans-unit>
-			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_event_endtime">
+			<trans-unit id="news.event-endtime">
 				<source>Event endtime</source>
 			</trans-unit>
-			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_layout">
+			<trans-unit id="news.layout">
 				<source>Layout (Card)</source>
 			</trans-unit>
-			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_layout.0">
+			<trans-unit id="news.layout.0">
 				<source>Default</source>
 			</trans-unit>
-			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_layout.1">
+			<trans-unit id="news.layout.1">
 				<source>Transparent Background</source>
 			</trans-unit>
-			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_layout.2">
+			<trans-unit id="news.layout.2">
 				<source>Blue Background</source>
 			</trans-unit>
-			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_layout.3">
+			<trans-unit id="news.layout.3">
 				<source>Event (Grey Background)</source>
 			</trans-unit>
-			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_layout.4">
+			<trans-unit id="news.layout.4">
 				<source>Event (Blue Background)</source>
 			</trans-unit>
-			<trans-unit id="tx_newsextended_domain_model_news.tx_ps14_event_link">
+			<trans-unit id="news.event-link">
 				<source>Link</source>
 			</trans-unit>
 		</body>

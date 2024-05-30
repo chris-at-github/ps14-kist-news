@@ -1,47 +1,32 @@
 {
-    "name": "ps14/news-extended",
-    "type": "typo3-cms-extension",
-    "description": "",
-    "authors": [
-        {
-            "name": "Christian Pschorr",
-            "role": "Developer"
-        }
-    ],
-    "license": "GPL-2.0-or-later",
-    "require": {
-        "typo3/cms-core": "^10.4"
-    },
-    "require-dev": {
-        "typo3/testing-framework": "^6.8"
-    },
-    "autoload": {
-        "psr-4": {
-            "Ps14\\NewsExtended\\": "Classes"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Ps14\\NewsExtended\\Tests\\": "Tests"
-        }
-    },
-    "replace": {
-        "typo3-ter/news-extended": "self.version"
-    },
-    "config": {
-        "vendor-dir": ".Build/vendor",
-        "bin-dir": ".Build/bin"
-    },
-    "scripts": {
-        "post-autoload-dump": [
-            "TYPO3\\TestingFramework\\Composer\\ExtensionTestEnvironment::prepare"
-        ]
-    },
-    "extra": {
-        "typo3/cms": {
-            "cms-package-dir": "{$vendor-dir}/typo3/cms",
-            "web-dir": ".Build/public",
-            "extension-key": "news_extended"
-        }
-    }
+	"name": "ps14/kist-news",
+	"type": "typo3-cms-extension",
+	"description": "Extension of the news for Kist + Escherich",
+	"keywords": [
+		"TYPO3",
+		"extension"
+	],
+	"homepage": "http://ps14.de/",
+	"require": {
+		"typo3/cms-core": "^12.4"
+	},
+	"suggest": {
+	},
+	"autoload": {
+		"psr-4": {
+			"Ps14\\KistNews\\": "Classes"
+		}
+	},
+	"license": "closed",
+	"authors": [
+		{
+			"name": "Christian Pschorr",
+			"email": "pschorr.christian@gmail.com"
+		}
+	],
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "ps14_kist_news"
+		}
+	}
 }

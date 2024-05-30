@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="EXT:news_extended/Resources/Private/Language/locallang.xlf" date="2022-02-02T22:29:12Z" product-name="news_extended">
+	<file source-language="en" datatype="plaintext" original="EXT:ps14_kist_news/Resources/Private/Language/locallang.xlf" date="2022-02-02T22:29:12Z" product-name="ps14_kist_news">
 		<header/>
 		<body>
 			<trans-unit id="tx_newsextended.action.readmore">
