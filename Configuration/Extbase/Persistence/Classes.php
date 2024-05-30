@@ -5,6 +5,7 @@ declare(strict_types=1);
 return [
 	\GeorgRinger\News\Domain\Model\News::class => [
 		'subclasses' => [
+			0 => \Ps14\KistNews\Domain\Model\News::class,
 			3 => \Ps14\KistNews\Domain\Model\Event::class,
 		],
 		'properties' => [
@@ -30,6 +31,10 @@ return [
 				'fieldName' => 'tx_kist_news_layout'
 			],
 		]
+	],
+	\Ps14\KistNews\Domain\Model\News::class => [
+		'tableName' => 'tx_news_domain_model_news',
+		'recordType' => 0,
 	],
 	\Ps14\KistNews\Domain\Model\Event::class => [
 		'tableName' => 'tx_news_domain_model_news',
