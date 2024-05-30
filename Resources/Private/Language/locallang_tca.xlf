@@ -13,7 +13,7 @@
 				<source>Location</source>
 			</trans-unit>
 			
-			<trans-unit id="news.no_detail">
+			<trans-unit id="news.no-detail">
 				<source>No detail page</source>
 			</trans-unit>
 			<trans-unit id="news.location">

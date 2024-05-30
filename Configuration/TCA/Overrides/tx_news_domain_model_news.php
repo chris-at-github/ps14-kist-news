@@ -7,7 +7,7 @@ if(defined('TYPO3') === false) {
 (function () {
 	// -------------------------------------------------------------------------------------------------------------------
 	// Weitere Felder in Pages
-	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', [
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tx_news_domain_model_news', [
 		'tx_kist_news_no_detail' => [
 			'exclude' => true,
 			'l10n_mode' => 'exclude',
@@ -107,7 +107,7 @@ if(defined('TYPO3') === false) {
 
 	// -------------------------------------------------------------------------------------------------------------------
 	// Neue Paletten hinzufuegen
-	$GLOBALS['TCA']['tx_news_domain_model_news']['palettes']['eventDate'] = [
+	$GLOBALS['TCA']['tx_news_domain_model_news']['palettes']['event_date'] = [
 		'label' => 'LLL:EXT:ps14_kist_news/Resources/Private/Language/locallang_tca.xlf:news.palette.event-date',
 		'showitem' => 'tx_kist_news_event_startdate, tx_kist_news_event_starttime, --linebreak--, tx_kist_news_event_enddate, tx_kist_news_event_endtime,'
 	];
@@ -127,94 +127,70 @@ if(defined('TYPO3') === false) {
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tx_news_domain_model_news', 'tx_kist_news_layout,', '0, 1, 2', 'after:bodytext');
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tx_news_domain_model_news', 'tx_kist_news_no_detail,', '0, 1, 2', 'after:hidden');
 
+	// ---------------------------------------------------------------------------------------------------------------------
+	// Konfigurationsanpassungen Global
+	$GLOBALS['TCA']['tx_news_domain_model_news']['columns']['description']['config']['richtextConfiguration'] = 'ps14Default';
+
+	$GLOBALS['TCA']['tx_news_domain_model_news']['columns']['fal_media']['config']['maxitems'] = 1;
+	$GLOBALS['TCA']['tx_news_domain_model_news']['columns']['fal_media']['config']['overrideChildTca']['columns']['showinpreview']['config']['default'] = 1;
+	$GLOBALS['TCA']['tx_news_domain_model_news']['columns']['fal_media']['config']['overrideChildTca']['columns']['crop']['config']['cropVariants'] = \Ps14\Site\Service\TcaService::getCropVariants(
+		[
+			'thumbnail' => [
+				'allowedAspectRatios' => ['16_9', 'NaN'],
+				'selectedRatio' => 'NaN'
+			],
+		]
+	);
+
+	$GLOBALS['TCA']['tx_news_domain_model_news']['types']['0']['columnsOverrides']['fal_media']['config']['overrideChildTca']['columns']['crop']['config']['cropVariants'] = \Ps14\Site\Service\TcaService::getCropVariants(
+		[
+			'default' => [
+				'allowedAspectRatios' => ['4_3', '16_9', 'NaN'],
+				'selectedRatio' => '4_3'
+			],
+			'thumbnail' => [
+				'allowedAspectRatios' => ['16_9', 'NaN'],
+				'selectedRatio' => '16_9'
+			],
+		]
+	);
+
 	// -------------------------------------------------------------------------------------------------------------------
 	// Neuer News Event-Type
-	$GLOBALS['TCA']['tx_news_domain_model_news']['columns']['type']['config']['items']['3'] = ['Event', 3] ;
+	$GLOBALS['TCA']['tx_news_domain_model_news']['columns']['type']['config']['items']['3'] = ['Event', 3];
+
+	$GLOBALS['TCA']['tx_news_domain_model_news']['types']['3'] = [
+		'showitem' => '
+		--palette--;;paletteCore,title,--palette--;;paletteSlug,teaser,
+			internalurl,
+			--palette--;;event_date,
+			--palette--;;location,
+			--palette--;;appearance,
+		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.media,
+			fal_media,
+		--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,
+			categories,
+		--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
+			--palette--;;paletteLanguage,
+		--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+			--palette--;;paletteHidden, tx_kist_news_no_detail,
+			--palette--;;paletteAccess,
+		--div--;LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:notes,
+			notes,
+		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.extended,
+	'
+	];
+
+	$GLOBALS['TCA']['tx_news_domain_model_news']['types']['3']['columnsOverrides']['internalurl']['label'] = 'LLL:EXT:ps14_kist_news/Resources/Private/Language/locallang_tca.xlf:news.event-link';
+	$GLOBALS['TCA']['tx_news_domain_model_news']['types']['3']['columnsOverrides']['internalurl']['config']['eval'] = 'trim';
+	$GLOBALS['TCA']['tx_news_domain_model_news']['types']['3']['columnsOverrides']['tx_kist_news_no_detail']['config']['default'] = '1';
+
+	$GLOBALS['TCA']['tx_news_domain_model_news']['types']['3']['columnsOverrides']['fal_media']['config']['overrideChildTca']['columns']['crop']['config']['cropVariants'] = \Ps14\Site\Service\TcaService::getCropVariants(
+		[
+			'thumbnail' => [
+				'allowedAspectRatios' => ['16_9', 'NaN'],
+				'selectedRatio' => 'NaN'
+			],
+		]
+	);
 })();
-
-//$GLOBALS['TCA']['tx_news_domain_model_news']['types']['3'] = [
-//	'showitem' => '
-//		--palette--;;paletteCore,title,--palette--;;paletteSlug,teaser,
-//			internalurl,
-//			--palette--;;eventDate,
-//			--palette--;;location,
-//			--palette--;;appearance,
-//		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.media,
-//			fal_media,
-//		--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,
-//			categories,
-//		--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
-//			--palette--;;paletteLanguage,
-//		--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
-//			--palette--;;paletteHidden, tx_kist_news_no_detail,
-//			--palette--;;paletteAccess,
-//		--div--;LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:notes,
-//			notes,
-//		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.extended,
-//	'
-//];
-
-// ---------------------------------------------------------------------------------------------------------------------
-// Konfigurationsanpassungen Global
-//$GLOBALS['TCA']['tx_news_domain_model_news']['columns']['fal_media']['config']['maxitems'] = 1;
-//$GLOBALS['TCA']['tx_news_domain_model_news']['columns']['fal_media']['config']['overrideChildTca']['columns']['showinpreview']['config']['default'] = 1;
-//$GLOBALS['TCA']['tx_news_domain_model_news']['columns']['fal_media']['config']['overrideChildTca']['columns']['crop']['config']['cropVariants'] = [
-//	'thumbnail' => [
-//		'title' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_crop_variant.thumbnail',
-//		'allowedAspectRatios' => [
-//			'16_9' => [
-//				'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.16_9',
-//				'value' => 16 / 9
-//			],
-//			'NaN' => [
-//				'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.free',
-//				'value' => 0.0
-//			],
-//		],
-//		'selectedRatio' => 'NaN',
-//	],
-//];
-
-// ---------------------------------------------------------------------------------------------------------------------
-// Konfigurationsanpassungen News
-//$GLOBALS['TCA']['tx_news_domain_model_news']['types']['0']['columnsOverrides']['fal_media']['config']['overrideChildTca']['columns']['crop']['config']['cropVariants'] = [
-//	'default' => [
-//		'title' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_crop_variant.default',
-//		'allowedAspectRatios' => [
-//			'4_3' => [
-//				'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.4_3',
-//				'value' => 4 / 3
-//			],
-//			'16_9' => [
-//				'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.16_9',
-//				'value' => 16 / 9
-//			],
-//			'NaN' => [
-//				'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.free',
-//				'value' => 0.0
-//			],
-//		],
-//		'selectedRatio' => '4_3',
-//	],
-//	'thumbnail' => [
-//		'title' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_crop_variant.thumbnail',
-//		'allowedAspectRatios' => [
-//			'16_9' => [
-//				'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.16_9',
-//				'value' => 16 / 9
-//			],
-//			'NaN' => [
-//				'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.free',
-//				'value' => 0.0
-//			],
-//		],
-//		'selectedRatio' => '16_9',
-//	],
-//];
-
-// ---------------------------------------------------------------------------------------------------------------------
-// Konfigurationsanpassungen Event
-//$GLOBALS['TCA']['tx_news_domain_model_news']['types']['3']['columnsOverrides']['internalurl']['label'] = 'LLL:EXT:ps14_kist_news/Resources/Private/Language/locallang_tca.xlf:news.event-link';
-//$GLOBALS['TCA']['tx_news_domain_model_news']['types']['3']['columnsOverrides']['internalurl']['config']['eval'] = 'trim';
-//$GLOBALS['TCA']['tx_news_domain_model_news']['types']['3']['columnsOverrides']['tx_kist_news_no_detail']['config']['default'] = '1';
-//$GLOBALS['TCA']['tx_news_domain_model_news']['types']['3']['columnsOverrides']['fal_media']['config']['overrideChildTca']['columns']['crop']['config']['cropVariants']['thumbnail']['selectedRatio'] = 'NaN';
