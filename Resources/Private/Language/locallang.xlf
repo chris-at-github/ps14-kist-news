@@ -7,6 +7,10 @@
 				<source>More information</source>
 			</trans-unit>
 
+			<trans-unit id="related-news">
+				<source>Related News</source>
+			</trans-unit>
+
 			<trans-unit id="date.dayRange">
 				<source>:startmonth :startday to :endday, :startyear</source>
 			</trans-unit>
