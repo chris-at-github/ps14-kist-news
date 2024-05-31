@@ -30,7 +30,7 @@ class BreadcrumbProcessor implements DataProcessorInterface {
 	 * @return array the processed data as key/value store
 	 */
 	public function process(ContentObjectRenderer $cObject, array $contentObjectConfiguration, array $processorConfiguration, array $processedData) {
-		if(isset($processedData['breadcrumb']) === true) {
+		if(isset($processedData['navigation']) === true) {
 
 			try {
 				$arguments = $this->getTypoScriptFrontendController()->getPageArguments()->getArguments();
@@ -49,7 +49,7 @@ class BreadcrumbProcessor implements DataProcessorInterface {
 					->execute();
 
 				if(($row = $statement->fetch()) !== false) {
-					$processedData['breadcrumb'][] = [
+					$processedData['navigation'][] = [
 						'title' => $row['title']
 					];
 				}

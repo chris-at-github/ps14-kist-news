@@ -1,5 +1,6 @@
-[traverse(request.getQueryParams(), 'tx_news_pi1/news') != 0]
+[request && traverse(request.getQueryParams(), 'tx_news_pi1/news') > 0]
 
 	// Einbindung Breadcrumb -> angepasste Version in Sub-Extension einbinden (falls noetig)
-#	page.10.dataProcessing.31 = Ps14\KistNews\DataProcessing\BreadcrumbProcessor
+	navigation.breadcrumb.dataProcessing.20 = Ps14\KistNews\DataProcessing\BreadcrumbProcessor
 [END]
+
