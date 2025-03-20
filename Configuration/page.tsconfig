@@ -1,0 +1,9 @@
+TCEMAIN.linkHandler.txNews {
+	handler = TYPO3\CMS\Backend\LinkHandler\RecordLinkHandler
+	#	label = LLL:EXT:extension/Resources/Private/Language/locallang.xlf:link.customTab
+	label = News
+	configuration {
+		table = tx_news_domain_model_news
+	}
+	scanAfter = url
+}

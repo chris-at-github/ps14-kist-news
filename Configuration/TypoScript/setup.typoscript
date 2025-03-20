@@ -4,3 +4,12 @@
 	navigation.breadcrumb.dataProcessing.20 = Ps14\KistNews\DataProcessing\BreadcrumbProcessor
 [END]
 
+config.recordLinks.txNews {
+	typolink {
+		# Detail page
+		parameter = 248
+		additionalParams.data = field:uid
+		additionalParams.wrap = &tx_news_pi1[controller]=News&tx_news_pi1[action]=detail&tx_news_pi1[news]=|
+	}
+}
+
