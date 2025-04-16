@@ -5,7 +5,10 @@ declare(strict_types=1);
 namespace Ps14\KistNews\Domain\Model;
 
 
+use TYPO3\CMS\Core\Context\Context;
 use TYPO3\CMS\Core\Localization\DateFormatter;
+use TYPO3\CMS\Core\Localization\Locale;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 use TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController;
@@ -31,11 +34,7 @@ class Event extends News {
 	 * @return \TYPO3\CMS\Core\Localization\Locale
 	 */
 	protected function getLocale() {
-
-		/** @var SiteLanguage $siteLanguage */
-		$siteLanguage = $GLOBALS['TSFE']->getLanguage();
-
-		return $siteLanguage->getLocale();
+		return $GLOBALS['TYPO3_REQUEST']->getAttribute('language')->getLocale();
 	}
 
 	/**
@@ -43,7 +42,7 @@ class Event extends News {
 	 */
 	public function getFormattedEventDate() {
 		$locale = $this->getLocale();
-		$dateFormatter =new DateFormatter();
+		$dateFormatter = new DateFormatter();
 		$format = '';
 		$components	= [
 			':startday' => '',
