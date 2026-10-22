@@ -24,6 +24,10 @@ class NewsDetailListener {
 		/** @var News $news */
 		$news = $event->getAssignedValues()['newsItem'];
 
+		if($news === null) {
+			return;
+		}
+
 		if($news->isNoDetail() === false) {
 			$metaTagManager = GeneralUtility::makeInstance(MetaTagManagerRegistry::class)->getManagerForProperty('robots');
 			$metaTagManager->addProperty('robots', 'index, follow');
